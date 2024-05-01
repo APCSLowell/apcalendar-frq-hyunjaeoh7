@@ -58,11 +58,11 @@ public class APCalendar
    */
   public static int dayOfWeek(int month, int day, int year)
   {
-    int day = firstDayOfYear(year);
+    int days = firstDayOfYear(year) + day;
     int[] months = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
     for(int i = 0; i < month; i++){
-      day += months[i];
+      days += months[i];
     }
-    return day % 7;
+    return days % 7;
   }
 }
